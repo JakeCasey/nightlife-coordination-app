@@ -1,0 +1,66 @@
+
+
+<head>
+    <% include ../views/partials/head %>
+</head>
+<header>
+    <% include ../views/partials/header %>
+</header>
+    
+    <body>
+    <div class="container">
+<!--    Remove hashtags to make EJS work again
+-->    
+
+    <div id="messages">
+    <% if(typeof messages !== 'undefined') { %>
+    <% if (messages.err){ %>
+        <div class="alert alert-danger" role="alert"> <%= messages.err %> </div>
+    <% } %>
+    <% if (messages.success){ %>
+        <div class="alert alert-success" role="alert"> <%= messages.success %> </div>
+    <% } %> 
+    <% } %>
+    </div>
+  
+    
+    
+    
+    <div id='main'; class="col-md-8 offset-md-2">
+    <div class="card text-center">
+        <h1> Nightlife </h1>
+        
+        <% if(bars){ %>
+                <ul>
+            <% for (bar in bars){ %>
+            
+                <li><%= bars[bar].name %> <br> <%= bars[bar].snippetText%> <p> There are <%=bars[bar].people %> going to this bar tonight! </p> <br> 
+                
+                <% if(auth && !going){ %>
+                
+                <a href="/going/<%= bars[bar]._id %>"><button class='btn btn-primary'  >I'm going!</button></a>
+                
+                <% } %>
+                
+                <% if(auth && going){ %> 
+                <% if(barID == bars[bar]._id) { %>
+                <a href="/notgoing/<%= bars[bar]._id %>"><button class='btn btn-primary'  >I'm not going!</button></a>
+                <% } %>
+                <% } %>
+                
+                </li>
+                <% } %>
+        
+                </ul>
+                <% } %>
+   
+   </div>
+   </div>
+   </div>
+    
+    </body>
+
+
+<footer>
+        <% include ../views/partials/footer %>
+</footer>

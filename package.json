@@ -1,0 +1,28 @@
+{
+  "name": "nightlife",
+  "version": "1.0.0",
+  "description": "A nightlife coordination application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Jake A. Casey",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.1.4",
+    "body-parser": "^1.16.1",
+    "connect-flash": "^0.1.1",
+    "crypto": "0.0.3",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.5",
+    "express": "^4.14.0",
+    "express-session": "^1.15.0",
+    "mongoose": "^4.7.8",
+    "node-schedule": "^1.2.0",
+    "oauth-1.0a": "^2.1.0",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "request": "^2.79.0"
+  }
+}
